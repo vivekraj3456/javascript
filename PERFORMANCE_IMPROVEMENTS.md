@@ -85,11 +85,11 @@ console.log(typeof name, typeof age, typeof IsLoggedIn, typeof state);
 
 ## Key Performance Principles Applied
 
-1. **Reduce Function Call Overhead**: Each console.log is a function call with overhead. Combining multiple outputs reduces this cost.
+1. **Reduce Function Call Overhead**: Each console.log is a function call with overhead. Combining related outputs reduces this cost while maintaining clarity.
 
 2. **Minimize I/O Operations**: Console operations are I/O bound. Fewer calls mean less time waiting for I/O.
 
-3. **Maintain Readability**: Optimizations preserve code clarity and educational value.
+3. **Balance Performance and Readability**: Some optimizations were limited to preserve educational value. Complex type coercion examples remain separate for clarity.
 
 4. **Preserve Functionality**: All optimizations maintain exact output and behavior.
 
@@ -103,10 +103,12 @@ All optimized files were tested to ensure:
 
 ## Benchmark Results
 
-While these are educational scripts, the improvements provide:
-- **Faster execution time** due to fewer function calls
+The improvements provide measurable benefits in certain contexts:
+- **Faster execution time** due to fewer function calls (most significant in large-scale applications)
 - **Reduced memory allocation** for console operations
-- **Better performance** in environments with slow console I/O (like remote terminals)
+- **Better performance** in environments with slow console I/O (like remote terminals or logging systems)
+
+Note: In educational contexts, the performance gains are modest, but the code remains clearer and more maintainable.
 
 ## Best Practices for Future Development
 

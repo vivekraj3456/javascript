@@ -26,8 +26,9 @@ console.log(typeof null, typeof undefined) //object undefined
 
 //dynamic typing
 name=34
+console.log(typeof name) //number
 name=true
-console.log(typeof name) //boolean (dynamic typing changes the type)
+console.log(typeof name) //boolean
 
 
 //  Primitive

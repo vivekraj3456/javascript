@@ -54,7 +54,11 @@ let str2="456"
 console.log(str1+str2, +str1 + +str2, Number(str1) + Number(str2)) //123456 (concatenation) 579 (addition) 579 (addition)
 // *Type coercion
 // automatic conversion of data type by js engine
-console.log("1"+2, 1+"2", "1"+"2", 1+1+"2", "1"+1+2) //12 12 12 22 112
+console.log("1"+2) //12
+console.log(1+"2") //12
+console.log("1"+"2") //12
+console.log(1+1+"2") //22
+console.log("1"+1+2) //112
 
 console.log("1"-2, "1"*2, "6"/"2") // -1 2 3 
 

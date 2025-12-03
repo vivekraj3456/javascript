@@ -10,10 +10,7 @@ let name ="vivek"
 let age=18
 let IsLoggedIn=true
 let state // undefined
-console.log(typeof name)  //string
-console.log(typeof age) //number
-console.log(typeof IsLoggedIn) //boolean
-console.log(typeof state)  //undefined
+console.log(typeof name, typeof age, typeof IsLoggedIn, typeof state)  //string number boolean undefined
 
 // *Data type:
 // 1_number=>2 to power 53
@@ -22,10 +19,8 @@ console.log(typeof state)  //undefined
 // 4_boolean=>true/false
 
 // 5_null => standalone value means empty value// null is object type
-console.log(typeof null) //object
-
 // 6_undefined => default value when variable is not initialized
-console.log(typeof undefined) //undefined
+console.log(typeof null, typeof undefined) //object undefined
 
 // 7_symbol=>unique
 
@@ -70,5 +65,4 @@ const myFunction = function(){
     console.log("Hello world");
 }
 
-console.log(typeof anotherId);
-console.log(typeof heros);
+console.log(typeof anotherId, typeof heros); //symbol object

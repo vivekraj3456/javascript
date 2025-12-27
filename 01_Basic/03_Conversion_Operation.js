@@ -73,7 +73,7 @@ console.log(2*2);
 console.log(2**3);
 console.log(2/2); // 1
 console.log(2%3); //2
-// *Conversion in operation
+//*******************Conversion in operation****************************
 let str1="123"
 let str2="456"
 console.log(str1+str2) //123456 (concatenation)
@@ -85,7 +85,7 @@ console.log("1"+2) //12 bcoz + operator concatenates number to string
 console.log(1+"2") //12 bcoz + operator concatenates number to string
 console.log("1"+"2"); //12 bcoz + operator concatenates string to string
 console.log(1+1+"2") //22 bcoz 1+1=2 then + operator concatenates number to string
-console.log("1"+1+2) //112 bcoz + operator concatenates number to string step by step
+console.log("1"+1+2) //"1"+1="11" then "11"+2="112" bcoz + operator concatenates number to string step by step
 
 console.log("1"-2) // -1 bcoz - operator converts string to number
 console.log("1"*2) //2 bcoz * operator converts string to number
@@ -93,6 +93,9 @@ console.log("6"/"2") //3 bcoz / operator converts string to number
 
 // *Comparison operators
 console.log(2>"12") //false bcoz 12 is greater than 2
+console.log(2<"12") //true bcoz 2 is less than 12
+console.log(2>="12") //false bcoz 12 is greater than 2
+console.log(2<="12") //true bcoz 2 is less than 12
 
 // *the unary plus (+) is used to convert a value into a number.
 console.log(+true); //1 bcoz true is converted to 1 in number conversion
@@ -106,6 +109,10 @@ console.log(null < 0) //false bcoz null is converted to 0 in number conversion a
 console.log(null == 0) //false bcoz null is only equal to undefined
 console.log(null >= 0) //true bcoz null is converted to 0 in number conversion and 0 is equal to 0
 console.log(null <= 0) //true bcoz null is converted to 0 in number conversion and 0 is equal to 0
+console.log(typeof null);
+console.log(undefined===null) 
+console.log("123");
+
 
 console.log(undefined > 0) //false bcoz undefined is converted to NaN in number conversion and NaN is not comparable
 console.log(undefined < 0) //false bcoz undefined is converted to NaN in number conversion and NaN is not comparable
@@ -113,6 +120,7 @@ console.log(undefined == 0) //false bcoz undefined is only equal to null
 console.log(undefined >= 0) //false bcoz undefined is converted to NaN in number conversion and NaN is not comparable
 console.log(undefined <= 0) //false bcoz undefined is converted to NaN in number conversion and NaN is not comparable
 console.log(undefined == null) //true bcoz undefined is equal to null
+
 
 // *Strict equality operator (===)
 console.log("1" === 1) //false bcoz different data types
@@ -122,3 +130,12 @@ console.log("1" !== 1) //true bcoz different data types
 console.log("1" == 1) //true bcoz type coercion is done and both are converted to number 1
 console.log("1" != 1) //false bcoz type coercion is done and both are converted to number 1
 
+// ***************stack and Heap memory***************************
+//! stack memory=> primitive data types are stored in stack memory
+//! Heap memory=> reference data types are stored in heap memory
+
+let myYoutubeName="vivekraj" 
+let anotherYoutubeName=myYoutubeName 
+anotherYoutubeName="vivekraj123" 
+console.log(myYoutubeName);
+console.log(anotherYoutubeName); 

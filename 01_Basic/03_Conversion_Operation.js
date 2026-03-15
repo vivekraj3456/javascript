@@ -64,6 +64,9 @@ console.log("1"-2, "1"*2, "6"/"2") // -1 2 3
 
 // *Comparison operators
 console.log(2>"12") //false bcoz 12 is greater than 2
+console.log(2<"12") //true bcoz 2 is less than 12
+console.log(2>="12") //false bcoz 12 is greater than 2
+console.log(2<="12") //true bcoz 2 is less than 12
 
 // *the unary plus (+) is used to convert a value into a number.
 console.log(+true, +false); //1 0
@@ -74,9 +77,19 @@ console.log(null > 0, null < 0, null == 0, null >= 0, null <= 0) //false false f
 
 console.log(undefined > 0, undefined < 0, undefined == 0, undefined >= 0, undefined <= 0, undefined == null) //false false false false false true
 
+
 // *Strict equality operator (===)
 console.log("1" === 1, "1" !== 1) //false true
 
 // *Loose equality operator (==)
 console.log("1" == 1, "1" != 1) //true false
 
+// ***************stack and Heap memory***************************
+//! stack memory=> primitive data types are stored in stack memory
+//! Heap memory=> reference data types are stored in heap memory
+
+let myYoutubeName="vivekraj" 
+let anotherYoutubeName=myYoutubeName 
+anotherYoutubeName="vivekraj123" 
+console.log(myYoutubeName);
+console.log(anotherYoutubeName); 

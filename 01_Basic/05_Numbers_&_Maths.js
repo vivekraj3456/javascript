@@ -1,34 +1,34 @@
-// const score =123;
-// console.log(score);
-// console.log(typeof score);
+const score =123;
+console.log(score);
+console.log(typeof score);
 
-// const balance = new Number(345);  // object ://!Avoid in code
-// console.log(balance);
-// console.log(typeof balance); //object
-// console.log(balance.toFixed(2)); // 345.00
+const balance = new Number(345);  // object ://!Avoid in code
+console.log(balance);
+console.log(typeof balance); //object
+console.log(balance.toFixed(2)); // 345.00
 
-// const num=543;
-// console.log(num.toString());
-// console.log(typeof num.toString());
-// console.log(num.toString().length);
+const num=543;
+console.log(num.toString()); 
+console.log(typeof num.toString());
+console.log(num.toString().length);
 
-// const price= 123.376;
-// console.log(price.toFixed(1)); // tofixed - decimal places
-// console.log(price.toPrecision(5)); // toPrecision - total digits
+const price= 123.376;
+console.log(price.toFixed(1)); // tofixed - decimal places
+console.log(price.toPrecision(5)); // toPrecision - total digits
 
-// console.log(Number.isInteger(price));
-// console.log(Number.isInteger(num));
+console.log(Number.isInteger(price));
+console.log(Number.isInteger(num));
 
-// let bigNumber= 12345678901234567;
-// console.log(bigNumber.toLocaleString());  // toLocaleString - adds commas based on locale // US Numbering System
-// console.log(bigNumber.toLocaleString("en-IN")); // Indian Numbering System
-// // ---------------------------------------
-// console.log(Number.MAX_VALUE);
-// console.log(Number.MIN_VALUE);1
-// console.log(Number.MAX_SAFE_INTEGER);
-// console.log(Number.MIN_SAFE_INTEGER);
-
+let bigNumber= 12345678901234567;
+console.log(bigNumber.toLocaleString());  // toLocaleString - adds commas based on locale // US Numbering System
+console.log(bigNumber.toLocaleString("en-IN")); // Indian Numbering System
 // ---------------------------------------
+console.log(Number.MAX_VALUE);
+console.log(Number.MIN_VALUE);1
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.MIN_SAFE_INTEGER);
+
+---------------------------------------
 
 console.log(1/0);  // infinity
 console.log(-1/0); // -infinity

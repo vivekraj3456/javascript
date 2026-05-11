@@ -8,7 +8,8 @@ const fruits = ["apple", "banana", "grapes"]
 console.log(fruits);
 console.log(typeof fruits) //object
 
-const myArr2= new Array(1,2,3,4,5)
+const myArr2= new Array(1,2,3,4,5) // another way to create array using Array constructor
+console.log(myArr2);
 console.log(myArr2[3]); //4
 
 myArr.push(8)

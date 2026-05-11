@@ -1,1 +1,1 @@
-name
+isLoggedin

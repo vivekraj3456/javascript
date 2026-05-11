@@ -1,2 +1,2 @@
 
-console.table({ acc
+console.log(Math.floor(Math.random()*6)+1);

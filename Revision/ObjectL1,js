@@ -1,0 +1,9 @@
+const JsUser={
+    name:"Vivek:,
+    course:"CSE",
+    age:23,
+    location:"Jalandhar",
+    email:"abcd@efg.com",
+    isLoggedIn:true,
+    lastLoginDays:["Monday","Friday"],
+}

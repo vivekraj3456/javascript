@@ -12,7 +12,7 @@ console.log(JsUser.email);
 console.log(JsUser["name"]); // another way to access object properties //called it bracket notation
 
 JsUser.email="vivek@def.com";
-// Object.freeze(JsUser) // to prevent object from further modifications
+// Object.freeze(JsUser); // to prevent object from further modifications
 JsUser.email="vivek@ghi.com"; // this will not work
 console.log(JsUser); 
 

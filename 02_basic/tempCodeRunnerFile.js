@@ -1,1 +1,2 @@
-isLoggedin
+
+            userFullname:{

@@ -51,3 +51,5 @@ function ReturnSecondValue(getArray){
     return getArray[1];
 }
 console.log(ReturnSecondValue([200,400,500,1000]));
+console.log(ReturnSecondValue
+        

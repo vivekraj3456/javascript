@@ -63,7 +63,9 @@ const tinderUser={}
     course.courseInstructor //ye bhi kaam karega, but destructuring se code clean aur readable hota hai
     // *object destructuring to extract specific property from object
     const {courseInstructor}=course 
+    const {courseInstructor: instructor}=course // object destructuring with aliasing to extract specific property from object and assign it to a new variable name
     console.log(courseInstructor); 
+    console.log(instructor);  //ab courseInstructor ki jagah instructor variable use kar sakte hai
     console.log("-----------")
 
     const {coursePrice: price}=course // object destructuring with aliasing to extract specific property from object and assign it to a new variable name
@@ -71,3 +73,4 @@ const tinderUser={}
     console.log(price); //ab coursePrice ki jagah price variable use kar sakte hai
 
     
+const {coursePrice}

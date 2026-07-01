@@ -18,7 +18,7 @@ console.log(typeof name, typeof age, typeof IsLoggedIn, typeof state)  //string 
 // 3_String=>""
 // 4_boolean=>true/false
 
-// 5_null => standalone value means empty value// null is object type
+// 5_null => standalone value meresempty value// null is object type
 // 6_undefined => default value when variable is not initialized
 console.log(typeof null, typeof undefined) //object undefined
 

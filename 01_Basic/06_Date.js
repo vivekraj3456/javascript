@@ -39,6 +39,8 @@ let myTimeStamp = Date.now(); //Timestamp in milliseconds
 console.log(myTimeStamp);
 console.log(Math.floor(Date.now()/1000));
 
+let const time=-date;
+csndf
 
 
 

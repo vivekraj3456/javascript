@@ -53,7 +53,7 @@ const tinderUser={}
     
     console.log("-----------")
 
-    const course={
+    const course={ //object literal
         courseName:"JS Bootcamp",
         courseInstructor:"Vivek",
         coursePrice:999
@@ -71,6 +71,3 @@ const tinderUser={}
     const {coursePrice: price}=course // object destructuring with aliasing to extract specific property from object and assign it to a new variable name
     // *courseprice ka chhota sa alias price hai, ab coursePrice ki jagah price variable use kar sakte hai
     console.log(price); //ab coursePrice ki jagah price variable use kar sakte hai
-
-    
-const {coursePrice}

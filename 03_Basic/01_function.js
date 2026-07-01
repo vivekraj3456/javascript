@@ -9,11 +9,11 @@ sayMyName();
 
 function summation(num1,num2){
     console.log(num1+num2);
-    // !let result=num1+num2
-    // !return result;
+    // !let result=num1+num2; //this is a local variable and can only be accessed inside the function
+    // !return result; 
 }
 summation(13,15);
-// !const result=summation(12,13);
+// !const result=summation(12,13); 
 
 function loginUserMessage(username="abc"){
     if(!username){
@@ -51,5 +51,5 @@ function ReturnSecondValue(getArray){
     return getArray[1];
 }
 console.log(ReturnSecondValue([200,400,500,1000]));
-console.log(ReturnSecondValue
+console.log(ReturnSecondValue)
         

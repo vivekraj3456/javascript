@@ -6,8 +6,8 @@ if(true){
     console.log("Inner",a);
     console.log(b);
 }
-console.log(a);
-console.log(c); //
+console.log(a); //global scoped variable
+console.log(c); //var is function scoped so it can be accessed outside the block but let and const are block scoped so they cannot be accessed outside the block
 
 function one(){
     const username = "Vivek";
@@ -21,11 +21,17 @@ function one(){
     two()
 
 }
-
+console.log("---------------")
 if(true){
     const username="Vivek"
     if(username==="Vivek"){
         const website="Youtube"
-        log
+           console.log(username + website); 
     }
+    // console.log(website); // website is block scoped so it cannot be accessed outside the block
+    // console.log(username); // username is block scoped so it cannot be accessed outside the block
 }
+const addTwo = function(num){
+    return num+2;
+}
+console.log(addTwo(5));

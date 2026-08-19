@@ -1,5 +1,5 @@
 //Dates
-
+console.log(Date.now()); //timestamp in milliseconds
 let myDate = new Date()
 console.log(myDate); // Full date and time in default format
 console.log(myDate.toString()); // Full date and time in string format Sat Dec 27 2025 14:35:20 GMT+0000 (Coordinated Universal Time)
@@ -12,7 +12,7 @@ console.log(myDate.getMonth() + 1); // Month (0-11, so +1 for human-readable for
 console.log(myDate.getDate()); // Day of the month (1-31) 27
 console.log(myDate.getDay()); // Day of the week (0-6) 6
 console.log(myDate.getHours()); // Hours (0-23) 14
-console.log(myDate.toJSON());
+console.log(myDate.toJSON()); // ISO format 2025-12-27T14:35:20.000Z
 console.log(myDate.toISOString()); // ISO format 2025-12-27T14:35:20.000Z
 console.log(myDate.toTimeString()); // Time portion in string format 14:35:20 GMT+0000 (Coordinated Universal Time)
 
@@ -39,8 +39,9 @@ let myTimeStamp = Date.now(); //Timestamp in milliseconds
 console.log(myTimeStamp);
 console.log(Math.floor(Date.now()/1000));
 
-let const time=-date;
-csndf
+// let const time=-date;
 
 
 
+
+Kya kar rahe ho wahan par mujhe bhi batao thoda. Ye jo data lake ka poora function hai yahan par, jo kaam kar raha hai, saara data function hai. Har ek function ko explain karo. 

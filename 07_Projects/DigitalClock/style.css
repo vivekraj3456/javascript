@@ -1,0 +1,370 @@
+/* ==========================================
+   🎮 CYBERPUNK GAMING CLOCK - HUD INTERFACE
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap');
+
+/* =============== RESET =============== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============== GAME WORLD =============== */
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: 'Orbitron', sans-serif;
+    color: #eaffff;
+    background-color: #020617;
+
+    /* Futuristic grid */
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.045) 1px, transparent 1px),
+        radial-gradient(circle at 50% 30%, #162044 0%, transparent 50%);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+}
+
+/* Animated background glow */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    left: -150px;
+
+    background: rgba(0, 255, 255, 0.12);
+    filter: blur(100px);
+    border-radius: 50%;
+
+    animation: ambientGlow 8s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes ambientGlow {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(150px, 100px);
+    }
+}
+
+/* =============== NAVIGATION HUD =============== */
+
+nav {
+    position: relative;
+    width: min(94%, 1150px);
+    height: 68px;
+    margin: 20px auto;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+
+    background: rgba(3, 12, 30, 0.85);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+
+    /* Sharp futuristic corners */
+    clip-path: polygon(
+        0 12px,
+        12px 0,
+        100% 0,
+        100% calc(100% - 12px),
+        calc(100% - 12px) 100%,
+        0 100%
+    );
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.1),
+        inset 0 0 25px rgba(0, 255, 255, 0.03);
+}
+
+nav a {
+    position: relative;
+    color: #75f6ff;
+    text-decoration: none;
+
+    padding: 10px 16px;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: all 0.25s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+
+    bottom: 4px;
+    left: 50%;
+
+    background: #00ffff;
+    box-shadow: 0 0 8px #00ffff;
+
+    transition: all 0.25s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+nav a:hover::after {
+    width: 80%;
+    left: 10%;
+}
+
+/* =============== MAIN GAME AREA =============== */
+
+.center {
+    position: relative;
+    min-height: calc(100vh - 110px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+
+    animation: systemBoot 0.8s ease-out;
+}
+
+/* Main HUD Panel */
+
+.center::before {
+    content: "";
+    position: absolute;
+
+    width: min(92%, 850px);
+    height: 430px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(9, 24, 55, 0.95),
+            rgba(2, 8, 22, 0.96));
+
+    border: 1px solid rgba(0, 255, 255, 0.45);
+
+    /* Gaming panel shape */
+    clip-path: polygon(
+        0 35px,
+        35px 0,
+        calc(100% - 35px) 0,
+        100% 35px,
+        100% calc(100% - 35px),
+        calc(100% - 35px) 100%,
+        35px 100%,
+        0 calc(100% - 35px)
+    );
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.15),
+        0 0 70px rgba(139, 92, 246, 0.08);
+
+    z-index: -1;
+}
+
+/* Scanline effect */
+
+.center::after {
+    content: "";
+    position: absolute;
+
+    width: min(92%, 850px);
+    height: 430px;
+
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 4px,
+        rgba(0, 255, 255, 0.018) 5px
+    );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =============== HUD LABEL =============== */
+
+#banner {
+    position: relative;
+    margin-bottom: 25px;
+
+    color: #00ffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+}
+
+#banner::before,
+#banner::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45px;
+    height: 1px;
+
+    background: #00ffff;
+    box-shadow: 0 0 8px #00ffff;
+}
+
+#banner::before {
+    right: calc(100% + 15px);
+}
+
+#banner::after {
+    left: calc(100% + 15px);
+}
+
+/* =============== DIGITAL CLOCK =============== */
+
+#clock {
+    position: relative;
+
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    font-weight: bold;
+    letter-spacing: 6px;
+
+    padding: 28px 45px;
+
+    color: #eaffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 255, 255, 0.1),
+            rgba(139, 92, 246, 0.08)
+        );
+
+    border: 1px solid rgba(0, 255, 255, 0.55);
+
+    clip-path: polygon(
+        0 18px,
+        18px 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        18px 100%,
+        0 calc(100% - 18px)
+    );
+
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 30px rgba(0, 255, 255, 0.6);
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 255, 255, 0.06),
+        0 0 25px rgba(0, 255, 255, 0.15);
+
+    animation: clockPulse 2s infinite alternate;
+}
+
+@keyframes clockPulse {
+    from {
+        box-shadow:
+            inset 0 0 20px rgba(0, 255, 255, 0.04),
+            0 0 15px rgba(0, 255, 255, 0.12);
+    }
+
+    to {
+        box-shadow:
+            inset 0 0 30px rgba(0, 255, 255, 0.1),
+            0 0 35px rgba(0, 255, 255, 0.3);
+    }
+}
+
+/* =============== SYSTEM DATA =============== */
+
+#time {
+    margin-top: 25px;
+    padding: 10px 22px;
+
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+
+    color: #c084fc;
+    background: rgba(139, 92, 246, 0.08);
+
+    border-left: 2px solid #a855f7;
+    border-right: 2px solid #a855f7;
+
+    text-shadow: 0 0 8px rgba(192, 132, 252, 0.5);
+}
+
+/* =============== SYSTEM BOOT ANIMATION =============== */
+
+@keyframes systemBoot {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(30px);
+        filter: brightness(1.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: brightness(1);
+    }
+}
+
+/* =============== RESPONSIVE =============== */
+
+@media (max-width: 600px) {
+
+    nav {
+        width: calc(100% - 24px);
+        height: auto;
+        min-height: 65px;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.6rem;
+        padding: 9px 8px;
+    }
+
+    .center::before,
+    .center::after {
+        height: 350px;
+    }
+
+    #clock {
+        font-size: clamp(2rem, 12vw, 3.5rem);
+        padding: 22px 15px;
+        letter-spacing: 2px;
+    }
+
+    #banner {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+    }
+
+    #banner::before,
+    #banner::after {
+        width: 25px;
+    }
+}

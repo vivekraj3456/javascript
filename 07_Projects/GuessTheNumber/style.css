@@ -1,0 +1,285 @@
+/* ================================
+   🎮 NUMBER GUESSING GAME - GAMING UI
+   ================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: #050816;
+    overflow-x: hidden;
+
+    /* Gaming grid background */
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(5, 8, 22, 0.9);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 5px 25px rgba(0, 255, 255, 0.1);
+}
+
+nav a {
+    font-family: 'Orbitron', sans-serif;
+    color: #8bffff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* ================= GAME CONTAINER ================= */
+
+#wrapper {
+    position: relative;
+    width: min(92%, 650px);
+    margin: 55px auto;
+    padding: 45px 40px;
+    text-align: center;
+
+    background: rgba(8, 15, 35, 0.88);
+    border: 1px solid rgba(0, 255, 255, 0.45);
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.15),
+        0 0 50px rgba(139, 92, 246, 0.1);
+}
+
+/* Decorative gaming corners */
+#wrapper::before,
+#wrapper::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+}
+
+#wrapper::before {
+    top: -2px;
+    left: -2px;
+    border-top: 4px solid #00ffff;
+    border-left: 4px solid #00ffff;
+}
+
+#wrapper::after {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 4px solid #ff00ff;
+    border-right: 4px solid #ff00ff;
+}
+
+/* ================= TITLE ================= */
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    color: #ffffff;
+    text-shadow:
+        0 0 8px #00ffff,
+        0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+#wrapper > p {
+    color: #a8b4d0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ================= FORM ================= */
+
+.form {
+    margin-top: 35px;
+}
+
+#guess {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #00ffff;
+    margin-bottom: 15px;
+}
+
+/* ================= INPUT ================= */
+
+#guessField {
+    width: min(100%, 330px);
+    padding: 16px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #00ffff;
+
+    background: #050816;
+    border: 1px solid #00ffff;
+    border-radius: 4px;
+    outline: none;
+
+    box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+#guessField:focus {
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 30px rgba(0, 255, 255, 0.35);
+}
+
+/* Remove number input arrows if you later use type="number" */
+#guessField::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+/* ================= GAMING BUTTON ================= */
+
+#subt {
+    display: block;
+    width: min(100%, 330px);
+    margin: 18px auto 0;
+    padding: 16px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #050816;
+    background: #00ffff;
+    border: none;
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    transition: all 0.25s ease;
+}
+
+#subt:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 20px #00ffff,
+        0 0 45px rgba(0, 255, 255, 0.6);
+}
+
+#subt:active {
+    transform: scale(0.97);
+}
+
+/* ================= GAME HUD / RESULTS ================= */
+
+.resultParas {
+    margin-top: 40px;
+    padding: 22px;
+
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-left: 4px solid #a855f7;
+}
+
+.resultParas p {
+    margin: 14px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #cbd5e1;
+}
+
+/* Previous guesses */
+.guesses {
+    color: #ffcc00;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+/* Remaining attempts counter */
+.lastResult {
+    display: inline-block;
+    min-width: 35px;
+    padding: 5px 10px;
+
+    color: #ffffff;
+    background: #7c3aed;
+    border: 1px solid #a855f7;
+
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+}
+
+/* Hint Message */
+.lowOrHi {
+    min-height: 25px;
+    color: #ff4d6d !important;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+}
+
+/* ================= ANIMATIONS ================= */
+
+#wrapper {
+    animation: gameStart 0.8s ease-out;
+}
+
+@keyframes gameStart {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+    nav {
+        height: auto;
+        padding: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #wrapper {
+        margin: 30px auto;
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}

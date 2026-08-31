@@ -1,46 +1,292 @@
+/* =========================================
+   BMI CALCULATOR — MODERN WELLNESS UI
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- PAGE BACKGROUND ---------- */
+body {
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    color: #243047;
+
+    background:
+        radial-gradient(circle at 10% 20%, rgba(129, 199, 255, 0.45), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(167, 139, 250, 0.35), transparent 30%),
+        linear-gradient(135deg, #eaf6ff, #f7f2ff, #eefbf7);
+
+    padding-bottom: 40px;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+    width: min(100% - 40px, 1100px);
+    height: 64px;
+    margin: 20px auto 0;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(65, 80, 120, 0.08);
+}
+
+nav a {
+    padding: 10px 16px;
+    color: #536079;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #5b4bdb;
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+}
+
+/* ---------- MAIN CARD ---------- */
 .container {
-  width: 575px;
-  height: 825px;
+    position: relative;
+    width: min(92%, 560px);
+    margin: 55px auto;
+    padding: 45px;
 
-  background-color: #50d56b;
-  padding-left: 30px;
-}
-#height,
-#weight {
-  width: 150px;
-  height: 25px;
-  margin-top: 30px;
-}
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
 
-#weight-guide {
-  margin-left: 75px;
-  margin-top: 25px;
-}
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
 
-#results {
-  font-size: 35px;
-  margin-left: 90px;
-  margin-top: 20px;
-  color: rgb(241, 241, 241);
+    box-shadow:
+        0 25px 60px rgba(61, 72, 120, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+    animation: floatIn 0.7s ease-out;
 }
 
-button {
-  width: 150px;
-  height: 35px;
-  margin-left: 90px;
-  margin-top: 25px;
-  background-color: #fff;
-  padding: 1px 30px;
-  border-radius: 8px;
-  color: #212121;
-  text-decoration: none;
-  border: 2px solid #212121;
+/* Decorative colored circles */
+.container::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    right: -30px;
 
-  font-size: 25px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a5d8ff, #c4b5fd);
+    opacity: 0.45;
+    filter: blur(5px);
+    z-index: -1;
 }
 
+/* ---------- HEADING ---------- */
 h1 {
-  padding-left: 15px;
-  padding-top: 25px;
-  
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    font-weight: 700;
+    margin-bottom: 35px;
+
+    background: linear-gradient(135deg, #4338ca, #7c3aed, #0891b2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    letter-spacing: -1px;
+}
+
+/* ---------- FORM FIELDS ---------- */
+form > p {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #475569;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ---------- INPUT ---------- */
+input {
+    width: 100%;
+    padding: 16px 18px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    color: #243047;
+
+    background: rgba(255, 255, 255, 0.75);
+    border: 1.5px solid #dbe4f0;
+    border-radius: 14px;
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:hover {
+    border-color: #b9c5e0;
+}
+
+input:focus {
+    background: #ffffff;
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 4px rgba(124, 58, 237, 0.1),
+        0 10px 25px rgba(124, 58, 237, 0.08);
+
+    transform: translateY(-2px);
+}
+
+/* ---------- BUTTON ---------- */
+button {
+    width: 100%;
+    margin: 8px 0 10px;
+    padding: 16px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: white;
+
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    background-size: 200% 100%;
+
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+
+    box-shadow: 0 12px 25px rgba(99, 102, 241, 0.25);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-position: 100% 0;
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(99, 102, 241, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ---------- RESULT ---------- */
+#results {
+    min-height: 60px;
+    margin: 15px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #5b4bdb;
+
+    border-radius: 14px;
+}
+
+/* ---------- BMI GUIDE ---------- */
+#weight-guide {
+    margin-top: 25px;
+    padding: 24px;
+
+    background: rgba(248, 250, 255, 0.7);
+    border: 1px solid rgba(210, 220, 240, 0.7);
+    border-radius: 18px;
+}
+
+#weight-guide h3 {
+    margin-bottom: 16px;
+    color: #334155;
+    font-size: 1.05rem;
+}
+
+#weight-guide p {
+    position: relative;
+    padding: 11px 0 11px 18px;
+
+    color: #64748b;
+    font-size: 0.9rem;
+
+    border-bottom: 1px solid #e8edf5;
+}
+
+#weight-guide p:last-child {
+    border-bottom: none;
+}
+
+/* Colorful dots */
+#weight-guide p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background: #f59e0b;
+    transform: translateY(-50%);
+}
+
+#weight-guide p:nth-of-type(2)::before {
+    background: #10b981;
+}
+
+#weight-guide p:nth-of-type(3)::before {
+    background: #ef4444;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+    nav {
+        width: calc(100% - 24px);
+        margin-top: 12px;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 35px auto;
+        padding: 35px 22px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        margin-bottom: 28px;
+    }
 }

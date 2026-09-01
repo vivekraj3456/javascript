@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick=function(){
+    //     alert("owl clicked");
+    // }
+
+    // attachEvent()   //this was used for event in internet explorer browser
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside this URL');
+    //     e.stopPropagation();
+    // },false)
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log('owl clicked');
+    // },false)
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log('google clicked');
+    // },false)
+
+// ================= EVENT HANDLING =================
+
+// Direct onclick method (older/simple way)
+// Ek element par directly click event lagata hai
+
+// document.getElementById('owl').onclick = function() {
+//     alert("owl clicked");
+// }
+
+// attachEvent() → Purane Internet Explorer mein events ke liye use hota tha
+
+// Event object (e) mein event se related information hoti hai:
+// type, timestamp, defaultPrevented
+// target, currentTarget
+// clientX, clientY, screenX, screenY
+// altKey, ctrlKey, shiftKey, keyCode
+
+// // ================= PARENT EVENT =================
+
+// // #images (UL) par click event listener
+// document.getElementById('images').addEventListener('click', function(e) {
+// console.log('clicked inside this URL');
+// // Event ko aage propagate hone se rokta hai
+// e.stopPropagation();
+// }, true);
+
+// // true → Event Capturing phase
+// // Event parent element se target element ki taraf travel karta hai
+
+// // ================= OWL EVENT =================
+
+// // Owl image par click event listener
+// document.getElementById('owl').addEventListener('click', function(e) {
+// // Element ka default browser behavior rokta hai
+// e.preventDefault();
+// // Event ko doosre elements tak propagate hone se rokta hai
+// e.stopPropagation();
+// console.log('owl clicked');
+// }, true);
+
+// // true → Capturing phase
+
+// ================= GOOGLE LINK EVENT =================
+// // Google link par click event listener
+// document.getElementById('google').addEventListener('click', function(e) {
+// // Link ka default behavior (Google page par jana) rokta hai
+// e.preventDefault();
+// // Event ko parent elements tak propagate hone se rokta hai
+// // e.stopPropagation();
+// console.log('google clicked');
+// }, false);
+
+// // false → Event Bubbling phase (default)
+// // Event target/child se parent elements ki taraf travel karta hai
+
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName==="IMG"){
+        console.log(e.target.id);
+        let removeIt=e.target.parentNode
+        removeIt.remove();
+    }
+})
+</script>
+</html>
+
+<!-- 
+true = Capturing = Parent → Child
+false = Bubbling = Child → Parent
+stopPropagation() = Event ka aage travel rok do
+preventDefault() = Browser ka default kaam rok do -->
+
+
+
+
+<!-- ==================== JAVASCRIPT EVENTS NOTES ==================== -->
+
+<!-- Event = User ya browser ki kisi activity (click, keyboard press, mouse movement) ko Event kehte hain. -->
+
+<!-- ==================== EVENT HANDLING ==================== -->
+
+<!-- Inline onclick = HTML ke andar event likhna; large applications mein generally avoid karte hain. -->
+
+<!-- .onclick = JavaScript se click event handle kar sakte hain, lekin addEventListener() zyada flexible hai. -->
+
+<!-- addEventListener() = Kisi element par specific event ko listen karne ka modern method hai. -->
+
+
+<!-- ==================== EVENT OBJECT ==================== -->
+
+<!-- Event Object (e) = Browser automatically event se related information callback function ko object ke form mein deta hai. -->
+
+<!-- event.type = Kaunsa event trigger hua hai, ye batata hai. -->
+
+<!-- event.timeStamp = Event kab trigger hua, uski timing information deta hai. -->
+
+<!-- event.target = Exactly us element ko represent karta hai jahan event actually trigger hua. -->
+
+<!-- event.currentTarget = Us element ko represent karta hai jiske event listener mein code run ho raha hai. -->
+
+
+<!-- ==================== EVENT PROPAGATION ==================== -->
+
+<!-- Event Propagation = Event ka DOM tree ke elements ke beech travel karna. -->
+
+<!-- Event Bubbling = Event child element se parent element ki taraf travel karta hai. -->
+
+<!-- Event Capturing = Event parent element se child element ki taraf travel karta hai. -->
+
+<!-- false = Default bubbling phase; isliye normally third parameter likhne ki zarurat nahi hoti. -->
+
+<!-- true = Event listener ko capturing phase mein handle karne ke liye use hota hai. -->
+
+
+<!-- ==================== EVENT CONTROL ==================== -->
+
+<!-- stopPropagation() = Event ko DOM tree mein aage propagate hone se rokta hai. -->
+
+<!-- preventDefault() = Element ke default browser behavior ko rokta hai. -->
+
+
+<!-- ==================== DOM + EVENTS ==================== -->
+
+<!-- event.target.tagName = Click hue element ka tag name batata hai, jaise IMG ya LI. -->
+
+<!-- parentNode = Current element ke parent element ko access karta hai. -->
+
+<!-- .remove() = Selected element ko DOM se remove karta hai. -->
+
+<!-- removeChild() = Parent element ke kisi specific child ko remove karta hai. -->
+
+
+<!-- ==================== IMPORTANT CONCEPT ==================== -->
+
+<!-- Event Delegation = Parent par ek event listener lagakar event.target se clicked child ko identify aur handle karna. -->
+
+<!-- Memory Trick: Click → Event Object → Target identify → Bubbling/Capturing → Required Action -->

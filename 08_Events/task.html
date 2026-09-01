@@ -1,0 +1,36 @@
+<!-- Start button dabane par name/date ki printing start ho.
+Stop button dabane par woh printing stop ho jaye. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start stop interval</title>
+</head>
+<body>
+    <body style="background-color: black;color: white;"></body>
+
+    <h1 id ="heading">Javascript</h1>
+
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const start=document.querySelector('#start')
+    const stop=document.querySelector('#stop')
+    const h1=document.querySelector('#heading')
+    let intervalId;
+    start.addEventListener('click',function(){
+        intervalId=setInterval(function(){
+            console.log(`vivek`);
+            console.log(new Date().toLocaleTimeString());
+            h1.innerText=(`vivek-${new Date().toLocaleTimeString()}`);
+        },1000)
+        })
+    stop.addEventListener('click',function(){
+        clearInterval(intervalId)
+        console.log("stopped");
+        
+    })
+</script>
+</html>

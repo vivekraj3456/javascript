@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body style="background-color: black;color: white;"></body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+//   // Executes once after 2 seconds
+// setTimeout(function () {
+//     console.log("Hello JavaScript");
+// }, 2000);
+
+// // Store the timeout reference so it can be cancelled
+// const timerId = setTimeout(function () {
+//     console.log("Hello JavaScript");
+// }, 2000);
+// clearTimeout(timerId);
+
+// // Executes repeatedly every 1 second
+// const intervalId = setInterval(function () {
+//     console.log("Hello JavaScript");
+// }, 1000);
+
+// // Stop the interval after 5 seconds
+// setTimeout(function () {
+//     clearInterval(intervalId);
+//     console.log("Interval stopped");
+// }, 5000);
+
+const changeText = function(){
+    document.querySelector('h1').innerHTML = "best JS series"
+}
+
+// Run changeText after 2 seconds
+const changeMe = setTimeout(changeText, 2000)
+
+document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)
+    console.log("STOPPED")
+})
+
+
+    const sayVivek=function(){
+        console.log("vivek");
+    }
+    
+</script>
+<script>

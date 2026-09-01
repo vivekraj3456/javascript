@@ -13,7 +13,6 @@ user.welcomeMessage();//Here, this refers to the user object because the functio
 
 console.log("---------------")
 console.log(this) //{} //In the global context, this refers to the global object (window in browsers, global in Node.js). In strict mode, it will be undefined.
-
 function xyz(){
     let username="Vivek"
     console.log(this.username) 

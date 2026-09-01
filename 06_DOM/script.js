@@ -115,3 +115,6 @@ convertedArray.forEach((item) => {
 //!  
 //!  Array.from()              → Collection ko Array banana
 //!  forEach()                 → Multiple elements par loop
+//! Nodelist
+//! HTML Collection 
+//! hosting
